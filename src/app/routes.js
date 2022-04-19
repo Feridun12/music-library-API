@@ -10,6 +10,7 @@ const getUserTypes = require("./controllers/users/userTypes");
 const getArtistsById = require("./controllers/artists/getArtistById");
 const postArtist = require("./controllers/artists/postArtist");
 const getAllArtists = require("./controllers/artists/getAllArtists");
+const updateArtistById = require("./controllers/artists/updateArtistById");
 // admin
 const { ADMIN } = require("~root/constants/userTypes");
 
@@ -36,5 +37,7 @@ router.get("/get/artistBy/:artistId", getArtistsById);
 router.get("/get/allArtists", getAllArtists);
 
 router.post("/post/artist", postArtist);
+
+router.patch("/artist/:artistId", updateArtistById); // does not work will work on it
 
 module.exports = router;
