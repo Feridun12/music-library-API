@@ -11,6 +11,7 @@ const getArtistsById = require("./controllers/artists/getArtistById");
 const postArtist = require("./controllers/artists/postArtist");
 const getAllArtists = require("./controllers/artists/getAllArtists");
 const updateArtistById = require("./controllers/artists/updateArtistById");
+const deleteArtistById = require("./controllers/artists/deleteArtistById");
 // admin
 const { ADMIN } = require("~root/constants/userTypes");
 
@@ -38,6 +39,8 @@ router.get("/get/allArtists", getAllArtists);
 
 router.post("/post/artist", postArtist);
 
-router.patch("/artist/:artistId", updateArtistById); // does not work will work on it
+router.patch("/artist/:artistId", updateArtistById);
+
+router.delete("/artist/:artistId", deleteArtistById);
 
 module.exports = router;
